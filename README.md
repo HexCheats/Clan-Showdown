@@ -1,5 +1,5 @@
 <h1 align="center" style="color: hotpink; font-size: 3em;">
-  🌈 Open <code>CC.html</code> 🌈
+  Open <code>CC.html</code>
 </h1>
 
 <p align="center" style="color: #ff69b4; font-weight: bold; font-size: 1.3em;">
