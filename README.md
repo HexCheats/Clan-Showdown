@@ -1,3 +1,1 @@
-### Open CC.html ###
-
-EXTREMELY GAY
+![Preview](preview.png)
