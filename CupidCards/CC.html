@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CC: Cupid's Curse Players</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2em;
+      background: linear-gradient(135deg, #ffb6f2, #99faff);
+      background-size: 400% 400%;
+      animation: bgWave 15s ease infinite;
+      font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgWave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+  font-size: 3em;
+  margin-top: 0.5em; /* moved slightly down */
+  margin-bottom: 0.5em;
+  color: #fff;
+  text-shadow: 0 0 10px #ff80c8, 2px 2px 6px #6ed0e0; /* pink + cyan shadow only */
+  background: linear-gradient(to right, #ff8fcf, #6fd7e5); /* slightly darker pink-cyan */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseGlow 0.6s infinite alternate; /* fast glowing */
+}
+
+    @keyframes pulseGlow {
+  from {
+    text-shadow: 0 0 10px #ff80c8, 2px 2px 6px #6ed0e0;
+  }
+  to {
+    text-shadow: 0 0 18px #ffa4d4, 4px 4px 10px #8ce7f4;
+  }
+}
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+      width: 100%;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffc1e3, #b8f3ff);
+      border-radius: 20px;
+      padding: 1.5em;
+      width: 250px;
+      box-shadow: 0 8px 24px rgba(255, 105, 180, 0.4);
+      border: 2px solid #ffb2ec;
+      transition: transform 0.3s;
+      color: #4b0082;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card::before,
+    .card::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card::before {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #ffffffcc 2px, transparent 3px) 0 0 / 60px 60px;
+      animation: sparkle 6s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes sparkle {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
+
+    .card::after {
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 5px, transparent 6px),
+        radial-gradient(circle, rgba(255,255,255,0.6) 8px, transparent 9px),
+        radial-gradient(circle, rgba(255,255,255,0.4) 12px, transparent 13px);
+      background-size: 80px 80px;
+      background-repeat: repeat;
+      animation: floatBubbles 8s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes floatBubbles {
+      0% { background-position: 0% 100%; }
+      100% { background-position: 100% 0%; }
+    }
+
+    .avatar {
+      float: right;
+      margin-left: 1em;
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background-color: black;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px #ff70e6;
+      object-fit: cover;
+      z-index: 1;
+      position: relative;
+    }
+
+    .name {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 8px #ff70e6, 1px 1px 3px #d14cc7;
+      margin-bottom: 0.5em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info {
+      font-size: 0.95em;
+      margin: 0.3em 0;
+      text-shadow: 1px 1px 2px #444;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info.tier { color: #fff2a6; }
+    .info.league { color: #aefbff; }
+    .info.title { color: #ffd2f9; }
+
+    .badge {
+      display: inline-block;
+      margin-top: 0.8em;
+      padding: 0.3em 0.7em;
+      border-radius: 12px;
+      background: linear-gradient(to right, #ff90b3, #90e0ff);
+      color: black;
+      font-weight: bold;
+      font-size: 0.85em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cupid's Curse:</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <img class="avatar" src="1.jpg" alt="avatar">
+      <div class="name">💘 Guzzkot</div>
+      <div class="info tier">Tier: Gold IV</div>
+      <div class="info league">League: A League</div>
+      <div class="info title">Title: Cupid’s Sharpest Arrow</div>
+      <div class="badge">Co-Owner</div>
+    </div>
+
+    <div class="card">
+      <img class="avatar" src="2.jpg" alt="avatar">
+      <div class="name">😎 Liam</div>
+      <div class="info tier">Tier: GrandMaster</div>
+      <div class="info league">League: Legendary</div>
+      <div class="info title">Title: Cupid's Owner</div>
+      <div class="badge">Top 0.1%</div>
+    </div>
+
+    <div class="card">
+      <img class="avatar" src="3.jpg" alt="avatar">
+      <div class="name">✨ Sunny</div>
+      <div class="info tier">Tier: Gold II</div>
+      <div class="info league">League: A League</div>
+      <div class="info title">Title: Cupid's Healer</div>
+      <div class="badge">Gay</div>
+    </div>
+
+    <div class="card">
+      <img class="avatar" src="4.jpg" alt="avatar">
+      <div class="name">💀 Deadlqck</div>
+      <div class="info tier">Tier: Diamond I</div>
+      <div class="info league">League: S League</div>
+      <div class="info title">Title: Lover & Fighter</div>
+      <div class="badge">No Women</div>
+    </div>
+
+    <div class="card">
+      <img class="avatar" src="5.jpg" alt="avatar">
+      <div class="name">😴 CC Lqve</div>
+      <div class="info tier">Tier: Silver V</div>
+      <div class="info league">League: C League</div>
+      <div class="info title">Title: Cock Sucker</div>
+      <div class="badge">Unemployed</div>
+    </div>
+
+    <div class="card">
+      <img class="avatar" src="6.jpg" alt="avatar">
+      <div class="name">cisco</div>
+      <div class="info tier">Tier: Master</div>
+      <div class="info league">League: S+ League</div>
+      <div class="info title">Title: Cupid's Master</div>
+      <div class="badge">Teddy Killer</div>
+    </div>
+  </div>
+
+</body>
+</html>
